@@ -1,0 +1,6 @@
+POST https://enterprise-accounting.test.mfw.work/accounting_report/export_project_report?file_type=csv
+Content-Type: application/json
+X-Office-Id: 1335
+X-Term-Id: 1836
+Cookie: _ga=GA1.2.497044293.1720166158; mfid=true; __zlcmid=1MbmqRqi0PN6ogY; _ca_mid_web_session=c524d96e9d406d46a5de202c6ff546ce; _dd_s=rum=2&id=8e33906a-1fde-4415-bebd-c3aa919fe26d&created=1724044938063&expire=1724045841889
+@body.json

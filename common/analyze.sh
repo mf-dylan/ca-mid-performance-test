@@ -1,14 +1,5 @@
 #!/bin/bash
 
-. ./common/file.sh
-
-prepare_target_txt() {
-    validate_file_exist $2
-    print_green "COOKIE: $1"
-    sed -e "s/{{COOKIE}}/$1/g" \
-        "$2" > "$3"
-}
-
 write_info_base() {
     local output_file=$1
     local start_time=$2

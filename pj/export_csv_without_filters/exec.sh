@@ -21,7 +21,7 @@ BODY_JSON_FILE="body.json"
 INFO_FILE="info.txt"
 
 # PATH
-EXEC_PATH="./pj/gq_GetProjectDetails_with_filters/"
+EXEC_PATH="./pj/export_csv_without_filters/"
 FULL_PATH_TARGET_FILE="${EXEC_PATH}${TARGET_FILE}"
 FULL_PATH_BODY_JSON_FILE="${EXEC_PATH}${BODY_JSON_FILE}"
 FULL_PATH_INFO_FILE="${EXEC_PATH}${INFO_FILE}"
@@ -41,8 +41,8 @@ print_separator
 # check prerequisite
 validate_file_exist "$FULL_PATH_BODY_JSON_FILE"
 
-# create target.txt
-prepare_ac_rpt_gq_target_txt "$COOKIE" "$FULL_PATH_TARGET_FILE"
+# prepare target.txt
+prepare_ac_rpt_export_pj_csv_target_txt "$COOKIE" "$FULL_PATH_TARGET_FILE"
 
 # print separator
 print_separator

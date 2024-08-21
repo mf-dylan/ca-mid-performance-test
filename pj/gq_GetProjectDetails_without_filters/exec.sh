@@ -4,6 +4,8 @@
 . ./common/print.sh
 . ./common/cd.sh
 . ./common/time.sh
+
+. ./common/prepare.sh
 . ./common/analyze.sh
 . ./common/vegeta.sh
 
@@ -14,7 +16,6 @@ load_env
 print_separator
 
 # FILE
-TARGET_TEMPLATE_FILE="target_template.txt"
 TARGET_FILE="target.txt"
 BODY_JSON_FILE="body.json"
 INFO_FILE="info.txt"
@@ -41,7 +42,7 @@ print_separator
 validate_file_exist "$FULL_PATH_BODY_JSON_FILE"
 
 # prepare target.txt
-prepare_target_txt "$COOKIE" "$TARGET_TEMPLATE_FILE" "$FULL_PATH_TARGET_FILE"
+prepare_ac_rpt_gq_target_txt "$COOKIE" "$FULL_PATH_TARGET_FILE"
 
 # print separator
 print_separator
