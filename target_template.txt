@@ -1,0 +1,6 @@
+POST https://enterprise-accounting.test.mfw.work/accounting_report/graphql
+Content-Type: application/json
+X-Office-Id: 1335
+X-Term-Id: 1836
+Cookie: {{COOKIE}}
+@body.json

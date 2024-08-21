@@ -1,0 +1,17 @@
+{
+  "operationName": "GetProjectDetails",
+  "variables": {
+    "journalTypes": [],
+    "journalStatuses": [],
+    "departments": [],
+    "businessPartners": [],
+    "itemIDs": [],
+    "subItemIDs": [],
+    "projectBIIDs": [],
+    "taxFilter": "tax_exclude",
+    "showSubItems": "true",
+    "page": 1,
+    "perPage": 50
+  },
+  "query": "query GetProjectDetails($startDate: String, $endDate: String, $journalTypes: [JournalType!], $projectBIIDs: [String!], $journalStatuses: [JournalStatus!], $departments: [String!], $businessPartners: [String!], $itemIDs: [String!], $subItemIDs: [String!], $taxFilter: String, $showSubItems: String, $page: Int, $perPage: Int) {\n  project(\n    startDate: $startDate\n    endDate: $endDate\n    journalTypes: $journalTypes\n    projectBIIDs: $projectBIIDs\n    journalStatuses: $journalStatuses\n    departments: $departments\n    businessPartners: $businessPartners\n    itemIDs: $itemIDs\n    subItemIDs: $subItemIDs\n    taxFilter: $taxFilter\n    showSubItems: $showSubItems\n    page: $page\n    perPage: $perPage\n  ) {\n    projects {\n      biid\n      name\n      code\n      sales\n      costOfGoodsSold\n      grossProfit\n      grossProfitRateString\n      operatingProfit\n      operatingProfitRateString\n      reportTableHeaders\n      projectViews {\n        name\n        reportViewType\n        financialStatementType\n        objectID\n        identificationCode\n        displayOrder\n        labelIndent\n        parentID\n        monthlyBalanceRow {\n          openingValue\n          values\n          totalValue\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    totalProjects\n    __typename\n  }\n}"
+}
