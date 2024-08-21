@@ -4,5 +4,5 @@
 
 go_to() {
     cd "$1"
-    print "PWD: $(pwd)"
+    print_cyan "GOTO: $(pwd)"
 }
