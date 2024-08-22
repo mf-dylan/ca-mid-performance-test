@@ -1,0 +1,18 @@
+{
+  "operationName": "FetchProjectReport",
+  "query": "query FetchProjectReport($startMonthID: String, $endMonthID: String, $journalTypes: [JournalType!], $projectBIIDs: [String!], $journalStatuses: [JournalStatus!], $departments: [String!], $businessPartners: [String!], $itemIDs: [String!], $subItemIDs: [String!], $taxFilter: String, $showSubItems: String, $page: Int, $perPage: Int, $encryptedTermId: String) {\n  project(\n    startMonthID: $startMonthID\n    endMonthID: $endMonthID\n    journalTypes: $journalTypes\n    projectBIIDs: $projectBIIDs\n    journalStatuses: $journalStatuses\n    departments: $departments\n    businessPartners: $businessPartners\n    itemIDs: $itemIDs\n    subItemIDs: $subItemIDs\n    taxFilter: $taxFilter\n    showSubItems: $showSubItems\n    page: $page\n    perPage: $perPage\n    encryptedTermID: $encryptedTermId\n  ) {\n    projects {\n      biid\n      name\n      code\n      sales\n      costOfGoodsSold\n      grossProfit\n      grossProfitRateString\n      operatingProfit\n      operatingProfitRateString\n      reportTableHeaders\n      projectViews {\n        name\n        reportViewType\n        financialStatementType\n        objectID\n        identificationCode\n        displayOrder\n        labelIndent\n        parentID\n        monthlyBalanceRow {\n          openingValue\n          values\n          totalValue\n        }\n      }\n    }\n    totalProjects\n  }\n}",
+  "variables": {
+    "businessPartners": [],
+    "departments": [],
+    "endMonthID": null,
+    "itemIDs": [],
+    "journalStatuses": [],
+    "journalTypes": [],
+    "page": 1,
+    "projectBIIDs": [],
+    "showSubItems": "true",
+    "startMonthID": null,
+    "subItemIDs": [],
+    "taxFilter": "tax_exclude"
+  }
+}

@@ -21,7 +21,7 @@ BODY_JSON_FILE="body.json"
 INFO_FILE="info.txt"
 
 # PATH
-EXEC_PATH="./pj/export_csv_without_filters/"
+EXEC_PATH="./pj/gq_FetchProjectReport_with_filters/"
 FULL_PATH_TARGET_FILE="${EXEC_PATH}${TARGET_FILE}"
 FULL_PATH_BODY_JSON_FILE="${EXEC_PATH}${BODY_JSON_FILE}"
 FULL_PATH_INFO_FILE="${EXEC_PATH}${INFO_FILE}"
@@ -29,7 +29,6 @@ FULL_PATH_INFO_FILE="${EXEC_PATH}${INFO_FILE}"
 # VEGETA
 VEGETA_DURATION="5s"
 VEGETA_RATE="1"
-VEGETA_TIMEOUT="80s"
 VEGETA_REPORT_FILE="report.txt"
 
 # print base info
@@ -43,7 +42,7 @@ print_separator
 validate_file_exist "$FULL_PATH_BODY_JSON_FILE"
 
 # prepare target.txt
-prepare_ac_rpt_export_pj_csv_target_txt "$COOKIE" "$FULL_PATH_TARGET_FILE"
+prepare_ac_rpt_gq_target_txt "$COOKIE" "$FULL_PATH_TARGET_FILE"
 
 # print separator
 print_separator
@@ -55,7 +54,7 @@ print "Start Time: $start_time"
 # exec vegeta attack
 ORIGIN_PATH=$(pwd)
 go_to "$EXEC_PATH" 
-vegeta_attack_with_timeout "$VEGETA_DURATION" "$VEGETA_RATE" "$VEGETA_TIMEOUT" "$VEGETA_REPORT_FILE"
+vegeta_attack "$VEGETA_DURATION" "$VEGETA_RATE" "$VEGETA_REPORT_FILE"
 go_to "$ORIGIN_PATH"
 
 # record attact end time
