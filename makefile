@@ -1,10 +1,12 @@
 # run performance test set
-pj_rpt_perf_test_set:
+pj_rpt_perf_test_set_2024_08_26:
 	@make pj_gq_FetchProjectReport_without_filters_single
+	@make delay
+	@make pj_gq_FetchProjectReport_with_filters_single
 	@make delay
 	@make pj_export_csv_without_filters_single
 	@make delay
-	@make pj_gq_FetchProjectReport_with_filters
+	@make pj_gq_FetchProjectReport_without_filters
 	@make delay
 	@make pj_export_csv_without_filters	
 
@@ -27,6 +29,9 @@ pj_gq_FetchProjectReport_without_filters_high_rate:
 
 pj_gq_FetchProjectReport_with_filters:
 	@./pj/gq_FetchProjectReport_with_filters/exec.sh
+
+pj_gq_FetchProjectReport_with_filters_single:
+	@./pj/gq_FetchProjectReport_with_filters_single/exec.sh
 
 # pj_rpt_perf_test_set => export csv
 pj_export_csv_without_filters:
