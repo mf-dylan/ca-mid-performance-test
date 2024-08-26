@@ -29,6 +29,7 @@ FULL_PATH_INFO_FILE="${EXEC_PATH}${INFO_FILE}"
 # VEGETA
 VEGETA_DURATION="5s"
 VEGETA_RATE="1"
+VEGETA_RESULT_FILT="results.json"
 VEGETA_REPORT_FILE="report.txt"
 
 # print base info
@@ -54,7 +55,7 @@ print "Start Time: $start_time"
 # exec vegeta attack
 ORIGIN_PATH=$(pwd)
 go_to "$EXEC_PATH" 
-vegeta_attack "$VEGETA_DURATION" "$VEGETA_RATE" "$VEGETA_REPORT_FILE"
+vegeta_attack_with_results "$VEGETA_DURATION" "$VEGETA_RATE" "$VEGETA_RESULT_FILT" "$VEGETA_REPORT_FILE"
 go_to "$ORIGIN_PATH"
 
 # record attact end time
